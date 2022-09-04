@@ -33,31 +33,47 @@ git lfs install
 git clone git@github.com:huggingface/transformers.git
 ```
 
+## Set up dataset and task name to make model name
+
+```bash
+dataset_name='mnist' # https://huggingface.co/datasets/mnist
+task_name='digit-classification'
+model_name=${dataset_name}-${task_name}
+```
+
+## Set up the output directory
+
+```bash
+right_now=$(date +'%Y-%m-%d')
+output_dir=/workspace/models/${name_name}/${right_now}
+```
+
+## Set up the huggingface model id and wandba_project
+
+```bash
+model_id=${model_name}-${right_now}
+wandb_project=${model_id}
+```
+
+## Set up the transformer scripts
+```
+transformer_scripts='/workspace/transformers/examples/pytorch'
+run_img_cls_path=${transformer_scripts}/image-classification/run_image_classification.py
+```
+
+## Set up the seed
+
+```bash
+seed=42
+```
+
 ## Start training!
 
 ```bash
-base_name='vit-base'
-dataset_name='mnist'
-
-right_now=$(date +'%Y-%m-%d')
-task_name=digit-classification
-
-output_dir=/workspace/models/${base_model}/${dataset_name}/${task_name}/${right_now}
-
-model_name=${dataset_name}-${task_name}
-model_id=${model_name}-${right_now}
-
-transformer_scripts=/workspace/transformers/examples/pytorch
-
-seed=42
-wandb_project=${model_id}
-logging_steps=100
-run_img_cls_path=${transformer_scripts}/image-classification/run_image_classification.py
-
 python $run_img_cls_path \
-    --dataset_name mnist                 \
-    --output_dir             $output_dir \
-    --overwrite_output_dir               \
+    --dataset_name mnist \
+    --output_dir $output_dir \
+    --overwrite_output_dir \
     --remove_unused_columns False \
     --do_train \
     --do_eval \
@@ -70,10 +86,9 @@ python $run_img_cls_path \
     --per_device_eval_batch_size 8 \
     --logging_strategy steps \
     --save_steps 100 \
-    --logging_steps $logging_steps \
+    --logging_steps 100 \
+    --eval_steps 1000 \
     --save_strategy steps \
-    --evaluation_strategy steps \
-    --load_best_model_at_end True \
     --save_total_limit 3 \
     --seed $seed
 ```
