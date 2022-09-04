@@ -1,41 +1,41 @@
 # mnist-notebooks
 
 ## Create the SSH key for GitHub
-```
+```bash
 ssh-keygen -t ed25519 -C "farleyknight@gmail.com" 
 ```
 
 ## Set up my email & name
-```
+```bash
 git config --global user.email "farleyknight@gmail.com"
 git config --global user.name "Farley Knight"
 ```
 
 ## Install the proper Python libraries
-```
+```bash
 pip install wandb seqeval datasets evaluate
 ```
 
 ## Install zsh and oh-my-zshell
-```
+```bash
 apt-get install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## Install Git LFS (for HuggingFace)
-```
+```bash
 apt-get install git-lfs
 git lfs install
 ```
 
 ## Clone the Transformers Library
-```
+```bash
 git clone git@github.com:huggingface/transformers.git
 ```
 
 ## Start training!
 
-```
+```bash
 base_name='vit-base'
 dataset_name='mnist'
 
