@@ -49,9 +49,6 @@ model_id=${model_name}-${right_now}
 
 transformer_scripts=/workspace/transformers/examples/pytorch
 
-train_batch_size=8
-eval_batch_size=8
-
 seed=42
 wandb_project=${model_id}
 logging_steps=100
@@ -69,8 +66,8 @@ run_img_cls_path=${transformer_scripts}/image-classification/run_image_classific
     --hub_strategy all_checkpoints \
     --learning_rate 2e-5 \
     --num_train_epochs 5 \
-    --per_device_train_batch_size $train_batch_size \
-    --per_device_eval_batch_size $eval_batch_size \
+    --per_device_train_batch_size 8 \
+    --per_device_eval_batch_size 8 \
     --logging_strategy steps \
     --save_steps 100 \
     --logging_steps $logging_steps \
