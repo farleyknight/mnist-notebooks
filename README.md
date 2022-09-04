@@ -30,6 +30,7 @@ git config --global user.name "Farley Knight"
 ## Install the proper Python libraries
 ```bash
 pip install wandb seqeval datasets evaluate
+pip install git+https://github.com/huggingface/transformers
 ```
 
 
