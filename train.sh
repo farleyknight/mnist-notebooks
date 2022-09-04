@@ -42,3 +42,4 @@ python $run_img_cls_path \
     --save_strategy steps \
     --save_total_limit 3 \
     --seed $seed
+
