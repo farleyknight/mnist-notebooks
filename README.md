@@ -36,7 +36,6 @@ git clone git@github.com:huggingface/transformers.git
 ## Start training!
 
 ```
-
 base_name='vit-base'
 dataset_name='mnist'
 
@@ -45,8 +44,7 @@ task_name=digit-classification
 
 output_dir=/workspace/models/{base_model}/{dataset_name}/{task_name}/{right_now}
 
-model_name=${dataset_name}-${digit-Classification}
-
+model_name=${dataset_name}-${task_name}
 model_id=${model_name}-${right_now}
 
 transformer_scripts=/workspace/transformers/examples/pytorch
@@ -71,8 +69,8 @@ run_img_cls_path=${transformer_scripts}/image-classification/run_image_classific
     --hub_strategy all_checkpoints \
     --learning_rate 2e-5 \
     --num_train_epochs 5 \
-    --per_device_train_batch_size train_batch_size \
-    --per_device_eval_batch_size eval_batch_size \
+    --per_device_train_batch_size $train_batch_size \
+    --per_device_eval_batch_size $eval_batch_size \
     --logging_strategy steps \
     --save_steps 100 \
     --logging_steps $logging_steps \
