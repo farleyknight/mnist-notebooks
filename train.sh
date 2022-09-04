@@ -1,39 +1,4 @@
-#!/usr/bin/zsh
-
-# Set up the machine for ML training
-
-## Set up Python & Conda
-cd /workspace
-wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
-chmod +x Anaconda3-2022.05-Linux-x86_64.sh
-./Anaconda3-2022.05-Linux-x86_64.sh
-eval "$(/root/anaconda3/bin/conda shell.zsh hook)"
-conda init
-
-## Install zsh and oh-my-zshell
-apt-get -y install zsh
-rm -rf /root/.oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-## Set up my email & name
-git config --global user.email "farleyknight@gmail.com"
-git config --global user.name "Farley Knight"
-
-## Install the proper Python libraries
-pip install wandb seqeval datasets evaluate torch
-pip install git+https://github.com/huggingface/transformers
-
-# Login to HuggingFace
-pip install huggingface_hub
-python -c "from huggingface_hub.hf_api import HfFolder; HfFolder.save_token('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')"
-
-## Install Git LFS (for HuggingFace)
-apt-get -y install git-lfs
-git lfs install
-
-## Clone the Transformers Library
-cd /workspace # This is the main directory for vast.ai setups
-git clone git@github.com:huggingface/transformers.git
+#!/bin/bash
 
 ## Set up dataset and task name to make model name
 dataset_name='mnist' # https://huggingface.co/datasets/mnist
