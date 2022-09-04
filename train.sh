@@ -14,6 +14,9 @@ git config --global user.name "Farley Knight"
 pip install wandb seqeval datasets evaluate
 pip install git+https://github.com/huggingface/transformers
 
+# Login to HuggingFace
+pip install huggingface_hub
+python -c "from huggingface_hub.hf_api import HfFolder; HfFolder.save_token('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')"
 
 ## Install Git LFS (for HuggingFace)
 apt-get -y install git-lfs
