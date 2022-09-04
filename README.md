@@ -28,13 +28,13 @@ pip install wandb seqeval datasets evaluate
 
 ## Install zsh and oh-my-zshell
 ```bash
-apt-get install zsh
+apt-get -y install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## Install Git LFS (for HuggingFace)
 ```bash
-apt-get install git-lfs
+apt-get -y install git-lfs
 git lfs install
 ```
 
