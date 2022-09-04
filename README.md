@@ -42,7 +42,7 @@ dataset_name='mnist'
 right_now=$(date +'%Y-%m-%d')
 task_name=digit-classification
 
-output_dir=/workspace/models/{base_model}/{dataset_name}/{task_name}/{right_now}
+output_dir=/workspace/models/${base_model}/${dataset_name}/${task_name}/${right_now}
 
 model_name=${dataset_name}-${task_name}
 model_id=${model_name}-${right_now}
