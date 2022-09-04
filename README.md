@@ -57,7 +57,7 @@ model_name=${dataset_name}-${task_name}
 
 ```bash
 right_now=$(date +'%Y-%m-%d')
-output_dir=/workspace/models/${name_name}/${right_now}
+output_dir=/workspace/models/${model_name}/${right_now}
 ```
 
 ## Set up the huggingface model id and wandba_project
