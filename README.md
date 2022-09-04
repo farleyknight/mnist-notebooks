@@ -54,7 +54,7 @@ wandb_project=${model_id}
 logging_steps=100
 run_img_cls_path=${transformer_scripts}/image-classification/run_image_classification.py
 
-!python $run_img_cls_path \
+python $run_img_cls_path \
     --dataset_name mnist                 \
     --output_dir             $output_dir \
     --overwrite_output_dir               \
