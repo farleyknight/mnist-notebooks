@@ -33,6 +33,11 @@ pip install wandb seqeval datasets evaluate
 pip install git+https://github.com/huggingface/transformers
 ```
 
+## Login to HuggingFace
+```
+pip install huggingface_hub
+huggingface-cli login
+```
 
 ## Install Git LFS (for HuggingFace)
 ```bash
