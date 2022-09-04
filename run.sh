@@ -56,7 +56,7 @@ python $run_img_cls_path \
     --do_eval \
     --push_to_hub \
     --hub_model_id $model_id \
-    --hub_strategy all_checkpoints \
+    --hub_strategy every_save \
     --learning_rate 2e-5 \
     --num_train_epochs 5 \
     --per_device_train_batch_size 8 \
