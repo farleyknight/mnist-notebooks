@@ -1,7 +1,7 @@
-from PIL import Image
-import requests
 import torch
+import time
 import json
+
 from transformers import AutoFeatureExtractor, AutoModelForImageClassification
 
 from datasets import load_dataset
@@ -14,11 +14,13 @@ extractor = AutoFeatureExtractor.from_pretrained("farleyknight/mnist-digit-class
 model = AutoModelForImageClassification.from_pretrained("farleyknight/mnist-digit-classification-2022-09-04")
 
 
-def run_prediction(start=0, end=9, output_dir="data/classify_mnist/"):
+def run_prediction(args):
+    start = args.get('start', 0)
+    end   = args.get('end', 9)
+    output_dir = args.get('output_dir', 'data/classify_mnist/')
     index_range = range(start, end+1)
     images = [convert_image(i) for i in index_range]
     
-    import time
     start = time.time()
 
     inputs = extractor(images=images, return_tensors="pt")
