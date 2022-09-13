@@ -1,5 +1,6 @@
 from PIL import Image
 import requests
+import torch
 
 #url = "https://i.pinimg.com/originals/47/e2/1d/47e21deacca0ef825933dfdbf33db1b4.jpg"
 #image2 = Image.open(requests.get(url, stream=True).raw)
@@ -29,17 +30,17 @@ def run_prediction(images):
     outputs = model(**inputs)
     logits = outputs["logits"]
     results = []
-    for pred in logits:
-        result = pred.argmax(-1).item()
-        results.append(result)
+    for logit in logits:
+        result = torch.nn.functional.softmax(logit, dim=0)
+        results.append(result.tolist())
         
     end = time.time()
 
     pred_time = end - start
     print('prediction time', pred_time)
     print('prediction time per image', pred_time / len(images))
-    for result in results:
-        print(model.config.id2label[result])
+    
+    print(results)
 
 images = []
 for i in range(10):
