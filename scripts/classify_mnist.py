@@ -1,10 +1,8 @@
 from PIL import Image
 import requests
 import torch
-
-#url = "https://i.pinimg.com/originals/47/e2/1d/47e21deacca0ef825933dfdbf33db1b4.jpg"
-#image2 = Image.open(requests.get(url, stream=True).raw)
-#print('image', image2)
+import json
+from transformers import AutoFeatureExtractor, AutoModelForImageClassification
 
 from datasets import load_dataset
 mnist = load_dataset("mnist")
@@ -12,27 +10,24 @@ mnist = load_dataset("mnist")
 def convert_image(index):    
     return mnist['train'][index]['image'].convert('RGB').resize((224, 224))
 
-from transformers import AutoFeatureExtractor, AutoModelForImageClassification
-
 extractor = AutoFeatureExtractor.from_pretrained("farleyknight/mnist-digit-classification-2022-09-04")
-
 model = AutoModelForImageClassification.from_pretrained("farleyknight/mnist-digit-classification-2022-09-04")
 
 
-def run_prediction(images):
-    assert type(images) == list
+def run_prediction(start=0, end=9, output_dir="data/classify_mnist/"):
+    index_range = range(start, end+1)
+    images = [convert_image(i) for i in index_range]
     
     import time
-
     start = time.time()
 
     inputs = extractor(images=images, return_tensors="pt")
     outputs = model(**inputs)
     logits = outputs["logits"]
-    results = []
-    for logit in logits:
+    results = {}
+    for logit, index in zip(logits, index_range):
         result = torch.nn.functional.softmax(logit, dim=0)
-        results.append(result.tolist())
+        results[index] = result.tolist()
         
     end = time.time()
 
@@ -40,10 +35,8 @@ def run_prediction(images):
     print('prediction time', pred_time)
     print('prediction time per image', pred_time / len(images))
     
-    print(results)
-
-images = []
-for i in range(10):
-    images.append(convert_image(i))
-        
-run_prediction(images)
+    file_name = f"start_{start}_end_{end}.json"
+    full_file_name = output_dir + file_name
+    with open(full_file_name, 'w') as f:
+        f.write(json.dumps(result))
+    return full_file_name

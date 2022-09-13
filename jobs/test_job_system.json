@@ -1,0 +1,16 @@
+{
+  "description": "Test Job System",
+  "import": "test_job_system",
+  "function": "my_function",
+  "verify": "verify_my_function",
+  "jobs": [
+    {
+      "args": {"name": "Farley"},
+      "status": "new" 
+    },
+    {
+      "args": {"name": "Jazmin"},
+      "status": "new"
+    }
+  ]
+}
