@@ -7,8 +7,9 @@ import requests
 
 from datasets import load_dataset
 mnist = load_dataset("mnist")
-image = mnist['train'][0]['image']
-image = image.convert('RGB').resize((224, 224))
+
+def convert_image(index):    
+    return mnist['train'][index]['image'].convert('RGB').resize((224, 224))
 
 from transformers import AutoFeatureExtractor, AutoModelForImageClassification
 
@@ -16,9 +17,32 @@ extractor = AutoFeatureExtractor.from_pretrained("farleyknight/mnist-digit-class
 
 model = AutoModelForImageClassification.from_pretrained("farleyknight/mnist-digit-classification-2022-09-04")
 
-inputs = extractor(images=image, return_tensors="pt")
-outputs = model(**inputs)
-logits = outputs["logits"]
-predicted_class_idx = logits.argmax(-1).item()
 
-print(model.config.id2label[predicted_class_idx])
+def run_prediction(images):
+    assert type(images) == list
+    
+    import time
+
+    start = time.time()
+
+    inputs = extractor(images=images, return_tensors="pt")
+    outputs = model(**inputs)
+    logits = outputs["logits"]
+    results = []
+    for pred in logits:
+        result = pred.argmax(-1).item()
+        results.append(result)
+        
+    end = time.time()
+
+    pred_time = end - start
+    print('prediction time', pred_time)
+    print('prediction time per image', pred_time / len(images))
+    for result in results:
+        print(model.config.id2label[result])
+
+images = []
+for i in range(10):
+    images.append(convert_image(i))
+        
+run_prediction(images)
