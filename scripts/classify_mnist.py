@@ -1,6 +1,7 @@
 import torch
 import time
 import json
+from os.path import exists
 
 from transformers import AutoFeatureExtractor, AutoModelForImageClassification
 
@@ -13,6 +14,20 @@ def convert_image(index):
 extractor = AutoFeatureExtractor.from_pretrained("farleyknight/mnist-digit-classification-2022-09-04")
 model = AutoModelForImageClassification.from_pretrained("farleyknight/mnist-digit-classification-2022-09-04")
 
+def verify_prediction(output, args):
+    filename = output
+    # verify filename exists    
+    if not exists(filename):
+        return False
+
+    # unpack args
+    start = args.get('start', 0)
+    end = args.get('end', 9)
+    
+    # open up the file, and make sure there are (end-start) entries in it
+    with open(filename) as f:
+        records = json.loads(f.read())
+    return len(records) == (end - start)
 
 def run_prediction(args):
     start = args.get('start', 0)

@@ -1,8 +1,8 @@
 {
   "name": "MNIST Training Analysis",
-  "import": "scripts.classify_mnist",
+  "import": "classify_mnist",
   "function": "run_prediction",
-  "verify_function": "verify_prediction",
+  "verify": "verify_prediction",
   "jobs": [
     {
       "args": {"start": 0, "end": 9},
