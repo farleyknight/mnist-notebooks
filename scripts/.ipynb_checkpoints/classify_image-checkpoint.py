@@ -5,7 +5,7 @@ url = "https://i.pinimg.com/originals/47/e2/1d/47e21deacca0ef825933dfdbf33db1b4.
 
 image = Image.open(requests.get(url, stream=True).raw)
 
-print('image', image)
+image
 
 from transformers import AutoFeatureExtractor, AutoModelForImageClassification
 
@@ -18,4 +18,4 @@ outputs = model(**inputs)
 logits = outputs["logits"]
 predicted_class_idx = logits.argmax(-1).item()
 
-print(model.config.id2label[predicted_class_idx])
+model.config.id2label[predicted_class_idx]
