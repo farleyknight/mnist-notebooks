@@ -66,5 +66,5 @@ def run_prediction(args):
     full_file_name = output_dir + file_name
     print('opening file', full_file_name)
     with open(full_file_name, 'w') as f:
-        f.write(json.dumps(results))
+        f.write(json.dumps(results, indent=4))
     return full_file_name
