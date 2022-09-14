@@ -327,70 +327,70 @@
             }
         },
         {
-            "status": "in_progress",
+            "status": "done",
             "args": {
                 "start": 4600,
                 "end": 4699
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 4700,
                 "end": 4799
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 4800,
                 "end": 4899
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 4900,
                 "end": 4999
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 5000,
                 "end": 5099
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 5100,
                 "end": 5199
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 5200,
                 "end": 5299
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 5300,
                 "end": 5399
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 5400,
                 "end": 5499
             }
         },
         {
-            "status": "new",
+            "status": "in_progress",
             "args": {
                 "start": 5500,
                 "end": 5599
