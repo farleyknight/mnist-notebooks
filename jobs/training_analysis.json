@@ -54,63 +54,63 @@
             }
         },
         {
-            "status": "in_progress",
+            "status": "done",
             "args": {
                 "start": 700,
                 "end": 799
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 800,
                 "end": 899
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 900,
                 "end": 999
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 1000,
                 "end": 1099
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 1100,
                 "end": 1199
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 1200,
                 "end": 1299
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 1300,
                 "end": 1399
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 1400,
                 "end": 1499
             }
         },
         {
-            "status": "new",
+            "status": "in_progress",
             "args": {
                 "start": 1500,
                 "end": 1599
