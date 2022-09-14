@@ -26,7 +26,8 @@ def run_job(fn, args, verify):
             return 'done'
         else:
             return 'rejected'
-    except:
+    except Exception as error:
+        print('error', error)
         return 'error'
 
 
