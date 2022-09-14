@@ -2238,98 +2238,98 @@
             }
         },
         {
-            "status": "in_progress",
+            "status": "done",
             "args": {
                 "start": 31900,
                 "end": 31999
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 32000,
                 "end": 32099
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 32100,
                 "end": 32199
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 32200,
                 "end": 32299
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 32300,
                 "end": 32399
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 32400,
                 "end": 32499
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 32500,
                 "end": 32599
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 32600,
                 "end": 32699
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 32700,
                 "end": 32799
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 32800,
                 "end": 32899
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 32900,
                 "end": 32999
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 33000,
                 "end": 33099
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 33100,
                 "end": 33199
             }
         },
         {
-            "status": "new",
+            "status": "in_progress",
             "args": {
                 "start": 33200,
                 "end": 33299
