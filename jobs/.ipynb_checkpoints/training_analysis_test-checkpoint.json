@@ -1,0 +1,15 @@
+{
+    "description": "MNIST Training Analysis",
+    "import": "classify_mnist",
+    "function": "run_prediction",
+    "verify": "verify_prediction",
+    "jobs": [
+        {
+            "args": {
+                "start": 0,
+                "end": 99
+            },
+            "status": "done"
+        }
+    ]
+}
