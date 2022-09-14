@@ -208,126 +208,126 @@
             }
         },
         {
-            "status": "in_progress",
+            "status": "done",
             "args": {
                 "start": 2900,
                 "end": 2999
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 3000,
                 "end": 3099
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 3100,
                 "end": 3199
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 3200,
                 "end": 3299
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 3300,
                 "end": 3399
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 3400,
                 "end": 3499
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 3500,
                 "end": 3599
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 3600,
                 "end": 3699
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 3700,
                 "end": 3799
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 3800,
                 "end": 3899
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 3900,
                 "end": 3999
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 4000,
                 "end": 4099
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 4100,
                 "end": 4199
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 4200,
                 "end": 4299
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 4300,
                 "end": 4399
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 4400,
                 "end": 4499
             }
         },
         {
-            "status": "new",
+            "status": "done",
             "args": {
                 "start": 4500,
                 "end": 4599
             }
         },
         {
-            "status": "new",
+            "status": "in_progress",
             "args": {
                 "start": 4600,
                 "end": 4699
